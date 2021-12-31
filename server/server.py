@@ -5,17 +5,11 @@ import time
 class MyHttp(BaseHTTPRequestHandler):
 
     def do_GET(self):
-
-        #try:
-            #with open('index.html','rb') as f:
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
 
         self.wfile.write(bytes("<html><body><h1>Http Server is Running.....</h1></body></html>", "utf-8"))
-
-        #except IOError:
-            #self.send_error(404, 'File Not Found: %s' % self.path)
         
     
     def do_POST(self):
